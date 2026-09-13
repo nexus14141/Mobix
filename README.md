@@ -38,15 +38,26 @@ accounts, saved comparisons, price alerts, and any real backend/database.
 
 ## Deploying to GitHub Pages
 
+**Every file in this folder sits at the top level on purpose — no
+subfolders.** The GitHub Android app's uploader can only pick individual
+files, not folders, so keeping everything flat means one upload just works.
+
 1. Create a new repository on GitHub (public, so Pages can serve it for free).
-2. Upload every file in this folder, **keeping the folder structure**
-   (`index.html` at the repo root, `css/style.css`, `js/data.js`,
-   `js/app.js`). On the GitHub website or app: **Add file → Upload files**,
-   then drag in the whole extracted folder.
+2. Open the repo, tap **Add file → Upload files**, then select **all 10
+   files** from this folder at once (multi-select them in your file picker —
+   `index.html`, `style.css`, `data.js`, `app.js`, `manifest.json`,
+   `icon.svg`, `icon-192.png`, `icon-512.png`, `favicon-32.png`,
+   `README.md`). Commit.
 3. Go to the repo's **Settings → Pages**.
 4. Under "Source," choose the `main` branch and `/ (root)` folder, then Save.
 5. GitHub gives you a URL like `https://yourusername.github.io/repo-name/`
    — it can take a minute or two to go live the first time.
+
+If you already created a repo with the broken nested-folder version: just
+upload these flat files into the same repo the same way — matching
+filenames (`index.html`, `style.css`) get overwritten with corrected
+versions, and the missing `app.js`, `data.js`, `manifest.json` get added.
+No need to delete anything first.
 
 No build command, no `npm install`, nothing else needed — it's just static
 files.
